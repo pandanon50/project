@@ -5,13 +5,17 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import bodyparser from 'body-parser';
 import cookieparser from 'cookie-parser';
+import { localsMiddleware } from './middlewares';
 
-import globalRouter from './router/globalRouter';
-import userRouter from './router/userRouter';
-import meetRouter from './router/meetRouter';
+import globalRouter from './routers/globalRouter';
+import userRouter from './routers/userRouter';
+import meetRouter from './routers/meetRouter';
 
 const app = express();
 
+app.set('view engine', 'pug');
+
+app.use(localsMiddleware);
 app.use(helmet());
 app.use(cookieparser());
 app.use(bodyparser.json());

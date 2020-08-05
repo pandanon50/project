@@ -2,18 +2,18 @@ import express from 'express';
 import routes from '../routes';
 
 export const meet = (req, res) => {
-    res.send('meet');
+    res.render('meet', { pageTitle: 'meet' });
 };
 
 export const upload = (req, res) => {
-    res.send('upload');
+    res.render('upload', { pageTitle: 'upload' });
 };
 export const meetDetail = (req, res) => {
-    res.send('meetDetail');
+    res.render('meetDetail', { pageTitle: 'meetDetail' });
 };
 export const editMeet = (req, res) => {
-    res.send('editMeet');
+    res.render('editMeet', { pageTitle: 'editMeet' });
 };
 export const deleteMeet = (req, res) => {
-    res.send('deleteMeet');
+    res.render('deleteMeet', { pageTitle: 'deletMeet' });
 };

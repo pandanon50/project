@@ -1,6 +1,6 @@
 import express from 'express';
 import routes from '../routes';
-import { meet, upload, meetDetail, editMeet, deleteMeet } from '../Controller/meetController';
+import { meet, upload, meetDetail, editMeet, deleteMeet } from '../controllers/meetController';
 
 const meetRouter = express.Router();
 
