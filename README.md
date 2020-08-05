@@ -23,11 +23,11 @@ nodejs project 2020/08~
 -   [x] login
 -   [ ] logout
 -   [x] join
--   [ ] Edit Profile
+-   [x] Edit Profile
 -   [ ] Change Password
 -   [ ] User Detail
 -   [ ] meet
 -   [ ] Meet Detail
 -   [ ] Edit Meet
--   [ ] Upload
+-   [x] Upload
 -   [ ] Delete Meet

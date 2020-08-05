@@ -1,4 +1,7 @@
 extends layouts/main.pug
 
 block content
-    p upload
+    .form-container
+        form(action=`/meet${routes.upload}`,method="post")
+            input(type="text", placeholder="Title",name="title",required="true")
+            input(type="submit",value="Upload meet")

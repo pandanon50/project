@@ -1,4 +1,10 @@
 extends layouts/main.pug
-
+include mixins/meetBlock
 block content
-    p home
+    .meetings
+        each item in meetings
+            +meetBlock({
+                id:item.id,
+                title:item.title,
+                members:item.members           
+                 })

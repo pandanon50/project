@@ -1,4 +1,10 @@
 extends layouts/main.pug
 
 block content
-    p editMeet
+    .form-container
+        form(action=routes.editMeet,method="post")
+            input(type="text",placeholder="Title",name="title")
+            textarea(name="description",placeholder="Description")
+            input(type="submit",value="Update Meet")
+            a.form-container__link(href=routes.deleteMeet)
+            button.delete Delete Meet ❌

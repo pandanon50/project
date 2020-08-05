@@ -1,5 +1,6 @@
 import express from 'express';
 import routes from '../routes';
+import { meetings } from '../db';
 
 export const users = (req, res) => {
     res.render('users', { pageTitle: 'users' });
@@ -15,18 +16,37 @@ export const changePassword = (req, res) => {
     res.render('changePassword', { pageTitle: 'changePassword' });
 };
 
-export const join = (req, res) => {
+export const getJoin = (req, res) => {
     res.render('join', { pageTitle: 'join' });
 };
 
-export const login = (req, res) => {
+export const postJoin = (req, res) => {
+    console.log(req.body);
+    const {
+        body: { name, email, password, password2 },
+    } = req;
+    if (password !== password2) {
+        res.status(400);
+        res.render('join', { pageTitle: 'join' });
+    } else {
+        // To Do: Register User
+        // To Do: Log In User
+        res.redirect(routes.home);
+    }
+};
+
+export const getLogin = (req, res) => {
     res.render('login', { pageTitle: 'login' });
+};
+export const postLogin = (req, res) => {
+    console.log(req.body);
 };
 
 export const home = (req, res) => {
-    res.render('home', { pageTitle: 'home' });
+    res.render('home', { pageTitle: 'home', meetings });
 };
 
 export const logout = (req, res) => {
-    res.render('logout', { pageTitle: 'logout' });
+    // To Do : Process Log Out
+    res.redirect(routes.home);
 };

@@ -1,0 +1,6 @@
+mixin meetBlock(meetings={})
+    .meetBlock
+        a(href=routes.meetDetail(meetings.id))
+            h3.meetBlock__title=meetings.title
+            each item in meetings.members
+                h5.meetBlock__member=item.name

@@ -30,7 +30,11 @@ const routes = {
     changePassword: CHANGE_PASSWORD,
     meet: MEET,
     upload: UPLOAD,
-    meetDetail: MEET_DETAIL,
+    meetDetail: (id) => {
+        if (id) {
+            return `/meet/${id}`;
+        } else return MEET_DETAIL;
+    },
     editMeet: EDIT_MEET,
     deleteMeet: DELETE_MEET,
 };
