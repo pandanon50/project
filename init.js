@@ -1,7 +1,11 @@
+import './db';
 import app from './app';
+import dotenv from 'dotenv';
+import './models/Meet';
+import './models/Member';
 
-const PORT = 8000;
+dotenv.config();
 
-app.listen(PORT, () => {
-    console.log(`handle Listening localhost:${PORT}`);
+app.listen(process.env.PORT, () => {
+    console.log(`✔ Connected to localhost:${process.env.PORT}`);
 });

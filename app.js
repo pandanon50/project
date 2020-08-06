@@ -17,6 +17,7 @@ app.set('view engine', 'pug');
 
 app.use(localsMiddleware);
 app.use(helmet());
+app.use('/uploads', express.static('uploads'));
 app.use(cookieparser());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));

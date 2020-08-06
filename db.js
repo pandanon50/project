@@ -1,58 +1,19 @@
-export const meetings = [
-    {
-        id: 324303,
-        title: '고등학교모임',
-        members: [
-            {
-                name: 'oh',
-                money: 30000,
-            },
-            {
-                name: 'park',
-                money: 40000,
-            },
-        ],
-    },
-    {
-        id: 5000,
-        title: '고등학교모임',
-        members: [
-            {
-                name: 'oh',
-                money: 30000,
-            },
-            {
-                name: 'park',
-                money: 40000,
-            },
-        ],
-    },
-    {
-        id: 322303,
-        title: '고등학교모임',
-        members: [
-            {
-                name: 'oh',
-                money: 30000,
-            },
-            {
-                name: 'park',
-                money: 40000,
-            },
-        ],
-    },
-    {
-        id: 231535,
-        title: '고등학교모임',
-        members: [
-            {
-                name: 'oh',
-                money: 30000,
-            },
-            {
-                name: 'park',
-                money: 40000,
-            },
-        ],
-    },
-];
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+});
+
+const db = mongoose.connection;
+
+const handleOpen = () => {
+    console.log('✔ Connected to DB');
+};
+
+const handleError = (error) => console.log(`❌ Error on DB Connection:${error}`);
+db.once('open', handleOpen);
+db.on('error', handleError);

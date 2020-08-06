@@ -1,6 +1,5 @@
 import express from 'express';
 import routes from '../routes';
-import { meetings } from '../db';
 
 export const users = (req, res) => {
     res.render('users', { pageTitle: 'users' });
@@ -40,10 +39,6 @@ export const getLogin = (req, res) => {
 };
 export const postLogin = (req, res) => {
     console.log(req.body);
-};
-
-export const home = (req, res) => {
-    res.render('home', { pageTitle: 'home', meetings });
 };
 
 export const logout = (req, res) => {
