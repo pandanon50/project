@@ -9,10 +9,6 @@ const MemberSchema = new mongoose.Schema({
         type: Number,
         required: 'Money is Required',
     },
-    lend: {
-        type: Boolean,
-        required: 'Required',
-    },
 });
 
 const model = mongoose.model('Member', MemberSchema);

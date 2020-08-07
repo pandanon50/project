@@ -17,6 +17,7 @@ const MEET = '/meet';
 const UPLOAD = '/upload';
 const MEET_DETAIL = '/:id';
 const EDIT_MEET = '/:id/edit';
+const PLUS_MEMBER = '/:id/plus-member';
 const DELETE_MEET = '/:id/delete';
 
 const routes = {
@@ -30,12 +31,21 @@ const routes = {
     changePassword: CHANGE_PASSWORD,
     meet: MEET,
     upload: UPLOAD,
+    plusMember: (id) => {
+        if (id) {
+            return `/meet/${id}/plus-member`;
+        } else return PLUS_MEMBER;
+    },
     meetDetail: (id) => {
         if (id) {
             return `/meet/${id}`;
         } else return MEET_DETAIL;
     },
-    editMeet: EDIT_MEET,
+    editMeet: (id) => {
+        if (id) {
+            return `/meet/${id}`;
+        } else return EDIT_MEET;
+    },
     deleteMeet: DELETE_MEET,
 };
 

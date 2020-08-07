@@ -3,17 +3,23 @@ extends layouts/main.pug
 block content
     .meet-header
         .meet-header__column
-            .column__title hi
+            .column__title
+                h3=meet.title
+        .meet-header__column
+            .name_columns
+                each item in meet
+                    button.column__button=item   
+        .meet-header__column
+            button.column__button +
+            button.column__button -
+            button.column__button All 
         .meet-header__column
             .column__members
-                ul
-                    li park
-                    li oh
-                    li lee
-        .meet-header__column
-            button.column__button 갚음
-            button.column__button 빌림
-            button.column__button 전체
+                if meet.members.length===0
+                    h3 Members is Empty 😢
+                else
+            a(href=routes.plusMember(meet.id))
+                button.edit-button 추가하기 
             
             
         
