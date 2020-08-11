@@ -1,18 +1,18 @@
-import express from 'express';
-import routes from '../routes';
+import express from "express";
+import routes from "../routes";
 import {
-    getMemberDetail,
-    postMemberDetail,
-    getPlusMember,
-    postPlusMember,
-    getUpload,
-    meetDetail,
-    getEditMeet,
-    deleteMeet,
-    postUpload,
-    postEditMeet,
-} from '../controllers/meetController';
-import { uploadMeet } from '../middlewares';
+  getMemberDetail,
+  postMemberDetail,
+  getPlusMember,
+  postPlusMember,
+  getUpload,
+  meetDetail,
+  getEditMeet,
+  deleteMeet,
+  postUpload,
+  postEditMeet,
+} from "../controllers/meetController";
+import { uploadMeet } from "../middlewares";
 
 const meetRouter = express.Router();
 
