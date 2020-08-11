@@ -20,14 +20,15 @@ nodejs project 2020/08~
 ### pages
 
 -   [ ] home
--   [x] login
+-   [ ] login
 -   [ ] logout
 -   [x] join
 -   [x] Edit Profile
 -   [ ] Change Password
 -   [ ] User Detail
--   [ ] meet
--   [ ] Meet Detail
--   [ ] Edit Meet
+-   [x] meet
+-   [x] Meet Detail
+-   [x] Member Detail
+-   [x] Edit Meet
 -   [x] Upload
--   [ ] Delete Meet
+-   [x] Delete Meet

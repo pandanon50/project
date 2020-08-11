@@ -2,9 +2,7 @@ extends layouts/main.pug
 
 block content
     .form-container
-        form(action=routes.editMeet,method="post")
-            input(type="text",placeholder="Title",name="title")
-            textarea(name="description",placeholder="Description")
-            input(type="submit",value="Update Meet")
-            a.form-container__link(href=routes.deleteMeet)
-            button.delete Delete Meet ❌
+        form(action=routes.editMeet(meet.id),method="post")
+            input(type="text",placeholder="Title",name="title",value=meet.title)
+            input(type="submit",value="Update Meet") 
+        a.form-container__link(href=routes.deleteMeet(meet.id)) Delete Meet ❌

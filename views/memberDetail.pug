@@ -1,0 +1,10 @@
+extends layouts/main.pug
+
+block content
+    .form-container
+        form(action=routes.memberDetail(member.id), method="post")
+            input(type="date" id="date", name="date" value=member.date)
+            input(type="text", placeholder="name", id="name" name="name" value=member.name)
+            input(type="text" ,placeholder="Money",id="money" name="money" value=member.money)
+            input(type="text" name="detail" placeholder="세부사항" value=member.detail)
+            input(type="submit",value="Update Profile")
