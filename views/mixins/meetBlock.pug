@@ -3,5 +3,3 @@ mixin meetBlock(meets={})
         a(href=routes.meetDetail(meets.id))
             h3.meetBlock__title=meets.title
             img.meetBlock__img(src=meets.imgFile)
-            each item in meets.members
-                h5.meetBlock__member=item.name
