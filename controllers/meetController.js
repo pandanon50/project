@@ -1,6 +1,7 @@
 import routes from "../routes";
 import Meet from "../models/Meet";
 import Member from "../models/Member";
+import moment from "moment";
 
 export const home = async (req, res) => {
   try {
@@ -43,6 +44,7 @@ export const meetDetail = async (req, res) => {
       total.push(search);
       name.push(search.name);
       money.push(search.money);
+      console.log(search);
     }
     res.render("meetDetail", {
       pageTitle: `${meet.title}`,
@@ -78,7 +80,10 @@ export const postMemberDetail = async (req, res) => {
     body: { money, name, detail, date },
   } = req;
   try {
-    await Member.findOneAndUpdate({ _id: id }, { money, name, detail, date });
+    await Member.findOneAndUpdate(
+      { _id: id },
+      { money, name, detail, date, moment }
+    );
     const member = await Member.findById(id);
     const meet = await Meet.findById(member.meet[0]._id);
     res.redirect(routes.meetDetail(meet.id));

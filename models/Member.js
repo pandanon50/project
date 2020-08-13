@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 const MemberSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -9,7 +8,7 @@ const MemberSchema = new mongoose.Schema({
     type: Number,
     required: "Money is Required",
   },
-  createdAt: {
+  date: {
     type: Date,
     default: Date.now,
   },

@@ -1,34 +1,30 @@
 extends layouts/main.pug
-
+include mixins/meetDetialBlock
 block content
-    .meet-header
-        .meet-header__column
+    .meet-detail
+        .meet-detail__header
             .column__title
                 h3=meet.title
-        .meet-header__column
-            .name_columns
+            .name__column
                 each item in total
-                    h3.column__button=item.name   
-        .meet-header__column
-            button.column__button +
-            button.column__button -
-            button.column__button All 
-        .meet-header__column
-            .column__members
-                if meet.members.length===0
-                    h3 Members is Empty 😢
-                else
-                    each item in total
-                        a(href=routes.memberDetail(item.id))
-                            ul.members-money
-                                if item.money>0
-                                    li +
-                                else if item.money===0
-                                    li empty!
-                                else 
-                                    li -
-                                li=item.name
-                                li=item.money
+                    .name__column-member=item.name 
+            .button__column
+                .sort__button +
+                .sort__button All
+                .sort__button -
+        .meet-detail__content
+            if meet.members.length===0
+                h3 Members is Empty 😢
+            else
+                each item in total
+                    +meetDetailBlock({
+                        id:item.id,
+                        money:item.money,
+                        date:item.date,
+                        name:item.name,
+                        detail:item.detail, 
+                    })
+        .meet-detail__nav
             a(href=routes.plusMember(meet.id))
                 button.edit-button Plus Member 
             a(href=routes.editMeet(meet.id))
