@@ -3,6 +3,8 @@ mixin meetDetailBlock(member={})
         a(href=routes.memberDetail(member.id))
             .meetDetailBlock__name=member.name
             .meetDetailBlock__money=member.money
-            .meetDetailBlock__date#jsmemberDate=member.date
+            .meetDetailBlock__date#jsmemberDate
+                .month#jsmonth
+                .date-etc#jsdate=member.date
             .meetDetailBlock__detail=member.detail
             

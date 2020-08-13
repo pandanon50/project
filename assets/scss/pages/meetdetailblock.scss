@@ -1,0 +1,44 @@
+.meet-detail__content {
+  background-color: white;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 100px;
+  .meetDetailBlock:nth-last-child(1) {
+    margin-bottom: 5px;
+  }
+  .meetDetailBlock {
+    font-weight: 500;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    a {
+      color: black;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 50px 50px;
+      font-size: 18px;
+      .meetDetailBlock__name {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .meetDetailBlock__money {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .meetDetailBlock__date {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .meetDetailBlock__detail {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

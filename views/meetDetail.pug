@@ -24,11 +24,10 @@ block content
                         name:item.name,
                         detail:item.detail, 
                     })
-        .meet-detail__nav
-            a(href=routes.plusMember(meet.id))
-                button.edit-button Plus Member 
+        .meet-detail__Btn            
             a(href=routes.editMeet(meet.id))
-                button.edit-button Edit Meet
-            
+                i.far.fa-edit 
+            a(href=routes.plusMember(meet.id))
+                i.fas.fa-plus 
             
         

@@ -1,5 +1,6 @@
 @import "config/_variables.scss";
 @import "config/reset.scss";
+@import "config/_buttons";
 @import "main.scss";
 
 @import "partials/header.scss";
@@ -7,6 +8,7 @@
 
 @import "pages/home.scss";
 @import "pages/meetdetail.scss";
+@import "pages/meetdetailblock.scss";
 
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700&display=swap");

@@ -2,7 +2,7 @@ header.header
     .header__column
         a(href=routes.home)
             i.fas.fa-wallet
-        h1 가계부
+            h1 가계부
     .header__column
         ul
         if !user.isAuthenticated
@@ -11,9 +11,9 @@ header.header
             li
                 a(href=routes.login) Login
             li
-                a(href=`/meet${routes.upload}`) Upload
+                a(href=`/meet${routes.upload}`) Meet
         else
             li
-                a(href=`/meet${routes.upload}`) Upload
+                a(href=`/meet${routes.upload}`) Meet
             li 
                 a(href=routes.logout) Logout

@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("var date = document.getElementById(\"jsmemberDate\");\n\nvar init = function init() {\n  console.log(date);\n};\n\ninit();\n\n//# sourceURL=webpack:///./assets/js/date.js?");
+eval("var date = document.getElementById(\"jsdate\");\nvar jsmonth = document.getElementById(\"jsmonth\");\n\nvar month = function month(m) {\n  if (m === \"Jan\") {\n    return 1;\n  } else if (m === \"Feb\") {\n    return 2;\n  } else if (m === \"Mar\") {\n    return 3;\n  } else if (m === \"Apr\") {\n    return 4;\n  } else if (m === \"May\") {\n    return 5;\n  } else if (m === \"Jun\") {\n    return 6;\n  } else if (m === \"Jul\") {\n    return 7;\n  } else if (m === \"Aug\") {\n    return 8;\n  } else if (m === \"Sep\") {\n    return 9;\n  } else if (m === \"Oct\") {\n    return 10;\n  } else if (m === \"Nov\") {\n    return 11;\n  } else {\n    return 12;\n  }\n};\n\nvar newMonth = function newMonth(item) {\n  var newDiv = document.createElement(\"div\");\n  newDiv.innerHTML = item;\n  jsmonth.appendChild(newDiv);\n};\n\nvar newDay = function newDay(item) {\n  var newDiv = document.createElement(\"div\");\n  newDiv.innerHTML = item;\n  date.appendChild(newDiv);\n};\n\nvar init = function init() {\n  var dateString = date.innerHTML.split(\" \");\n  date.innerHTML = \"\";\n  var yearNum = dateString[3];\n  var monthNum = month(dateString[1]);\n  var day = dateString[2];\n  var week = dateString[0];\n  console.log(yearNum, monthNum, day, week);\n  newMonth(monthNum);\n  newDay(yearNum);\n  newDay(day);\n  newDay(week);\n};\n\ninit();\n\n//# sourceURL=webpack:///./assets/js/date.js?");
 
 /***/ }),
 

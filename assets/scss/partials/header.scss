@@ -3,6 +3,11 @@
   a {
     text-decoration: none;
     color: white;
+    display: flex;
+    align-items: center;
+    i {
+      margin-right: 10px;
+    }
   }
   color: white;
   background-color: $headerColor;
