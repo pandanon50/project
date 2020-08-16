@@ -1,6 +1,5 @@
-const date = document.getElementById("jsdate");
-const jsmonth = document.getElementById("jsmonth");
-
+const dateContainer = document.querySelectorAll("#jsmemberDate");
+console.log(dateContainer);
 const month = (m) => {
   if (m === "Jan") {
     return 1;
@@ -29,29 +28,37 @@ const month = (m) => {
   }
 };
 
-const newMonth = (item) => {
-  const newDiv = document.createElement("div");
-  newDiv.innerHTML = item;
-  jsmonth.appendChild(newDiv);
-};
-
-const newDay = (item) => {
+const newDay = (item, date) => {
   const newDiv = document.createElement("div");
   newDiv.innerHTML = item;
   date.appendChild(newDiv);
 };
 
+const newEtc = (item, date) => {
+  const newDiv = document.createElement("div");
+  newDiv.innerHTML = item;
+  date.appendChild(newDiv);
+};
+
+const divWrapper = (Wrap, date, date2) => {
+  const newDiv = document.createElement("div");
+  newDiv.innerHTML = `${date}.${date2}`;
+  Wrap.appendChild(newDiv);
+};
+
 const init = () => {
-  const dateString = date.innerHTML.split(" ");
-  date.innerHTML = "";
-  const yearNum = dateString[3];
-  const monthNum = month(dateString[1]);
-  const day = dateString[2];
-  const week = dateString[0];
-  console.log(yearNum, monthNum, day, week);
-  newMonth(monthNum);
-  newDay(yearNum);
-  newDay(day);
-  newDay(week);
+  for (const date of dateContainer) {
+    const date2 = date.querySelector("#jsDate");
+    const jsEtc = date.querySelector("#jsDateEtc");
+    const dateString = jsEtc.innerHTML.split(" ");
+    jsEtc.innerHTML = " ";
+    const yearNum = dateString[3];
+    const monthNum = month(dateString[1]);
+    const day = dateString[2];
+    const week = dateString[0];
+    newDay(day, date2);
+    divWrapper(jsEtc, yearNum, monthNum);
+    newEtc(week, jsEtc);
+  }
 };
 init();

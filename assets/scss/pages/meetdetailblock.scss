@@ -33,6 +33,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        .date {
+          font-size: 25px;
+          margin-right: 10px;
+        }
+        .date-etc {
+          display: flex;
+          flex-direction: column;
+          font-size: 10px;
+        }
       }
       .meetDetailBlock__detail {
         display: flex;

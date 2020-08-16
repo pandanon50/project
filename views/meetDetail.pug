@@ -14,7 +14,7 @@ block content
                 .sort__button -
         .meet-detail__content
             if meet.members.length===0
-                h3 Members is Empty 😢
+                h3.memberEmpty Members is Empty 😢
             else
                 each item in total
                     +meetDetailBlock({

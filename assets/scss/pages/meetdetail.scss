@@ -1,6 +1,12 @@
 @import "../config/buttons";
 
 .meet-detail {
+  .memberEmpty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+  }
   .meet-detail__header {
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     color: white;
