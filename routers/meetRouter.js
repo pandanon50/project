@@ -12,19 +12,30 @@ import {
   postUpload,
   postEditMeet,
 } from "../controllers/meetController";
-import { uploadMeet } from "../middlewares";
+import { uploadMeet, onlyPrivate } from "../middlewares";
 
 const meetRouter = express.Router();
 
-meetRouter.get(routes.upload, getUpload);
-meetRouter.post(routes.upload, uploadMeet, postUpload);
-meetRouter.get(routes.meetDetail(), meetDetail);
-meetRouter.get(routes.editMeet(), getEditMeet);
-meetRouter.post(routes.editMeet(), postEditMeet);
-meetRouter.get(routes.plusMember(), getPlusMember);
-meetRouter.post(routes.plusMember(), postPlusMember);
-meetRouter.get(routes.memberDetail(), getMemberDetail);
-meetRouter.post(routes.memberDetail(), postMemberDetail);
-meetRouter.get(routes.deleteMeet(), deleteMeet);
+// Upload
+meetRouter.get(routes.upload, onlyPrivate, getUpload);
+meetRouter.post(routes.upload, onlyPrivate, uploadMeet, postUpload);
+
+// Meet Detail
+meetRouter.get(routes.meetDetail(), onlyPrivate, meetDetail);
+
+// Edit Meet
+meetRouter.get(routes.editMeet(), onlyPrivate, getEditMeet);
+meetRouter.post(routes.editMeet(), onlyPrivate, postEditMeet);
+
+// Plus Member
+meetRouter.get(routes.plusMember(), onlyPrivate, getPlusMember);
+meetRouter.post(routes.plusMember(), onlyPrivate, postPlusMember);
+
+// Member Detail
+meetRouter.get(routes.memberDetail(), onlyPrivate, getMemberDetail);
+meetRouter.post(routes.memberDetail(), onlyPrivate, postMemberDetail);
+
+// Delete Meet
+meetRouter.get(routes.deleteMeet(), onlyPrivate, deleteMeet);
 
 export default meetRouter;

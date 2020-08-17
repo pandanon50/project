@@ -21,6 +21,11 @@ const PLUS_MEMBER = "/:id/plus-member";
 const DELETE_MEET = "/:id/delete";
 const MEMBER_DETAIL = "/:id/member-detail";
 
+// SocialLogin
+
+const GITHUB = "/auth/github";
+const GITHUB_CALLBACK = "/auth/github/callback";
+
 const routes = {
   home: HOME,
   join: JOIN,
@@ -57,6 +62,8 @@ const routes = {
       return `/meet/${id}/delete`;
     } else return DELETE_MEET;
   },
+  github: GITHUB,
+  githubCallback: GITHUB_CALLBACK,
 };
 
 export default routes;
