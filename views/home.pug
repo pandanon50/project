@@ -3,39 +3,12 @@ include mixins/meetBlock
 block content
     .meets
         each item in meets
-            +meetBlock({
-                id:item.id,
-                title:item.title,
-                members:item.members,
-                imgFile:item.fileUrl        
-                })
-            +meetBlock({
-                id:item.id,
-                title:item.title,
-                members:item.members,
-                imgFile:item.fileUrl        
-                })
-            +meetBlock({
-                id:item.id,
-                title:item.title,
-                members:item.members,
-                imgFile:item.fileUrl        
-                })
-            +meetBlock({
-                id:item.id,
-                title:item.title,
-                members:item.members,
-                imgFile:item.fileUrl        
-                })
-            +meetBlock({
-                id:item.id,
-                title:item.title,
-                members:item.members,
-                imgFile:item.fileUrl        
-                })
-            +meetBlock({
-                id:item.id,
-                title:item.title,
-                members:item.members,
-                imgFile:item.fileUrl        
-                })        
+            if loggedUser
+                if loggedUser.id === item.creator.id
+                    +meetBlock({
+                        id:item.id,
+                        title:item.title,
+                        members:item.members,
+                        imgFile:item.fileUrl        
+                        })
+            

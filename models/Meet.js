@@ -19,6 +19,10 @@ const MeetSchema = new mongoose.Schema({
       ref: "Member",
     },
   ],
+  creator: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 const model = mongoose.model("Meet", MeetSchema);

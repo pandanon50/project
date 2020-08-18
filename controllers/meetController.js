@@ -5,7 +5,7 @@ import moment from "moment";
 
 export const home = async (req, res) => {
   try {
-    const meets = await Meet.find({});
+    const meets = await Meet.find({}).populate("creator");
     res.render("home", { pageTitle: "home", meets });
   } catch (error) {
     console.log(error);
@@ -19,12 +19,16 @@ export const getUpload = (req, res) => {
 export const postUpload = async (req, res) => {
   const {
     body: { title },
-    file: { path },
+    file: { location },
   } = req;
+  console.log(req.file);
   const newMeet = await Meet.create({
-    fileUrl: path,
+    fileUrl: location,
     title,
+    creator: req.user.id,
   });
+  req.user.meets.push(newMeet.id);
+  req.user.save();
   // To Do:Upload and save meet
   res.redirect(routes.meetDetail(newMeet.id));
 };

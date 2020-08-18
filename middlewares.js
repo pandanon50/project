@@ -1,12 +1,25 @@
 import routes from "./routes";
+import multerS3 from "multer-s3";
+import aws from "aws-sdk";
 import multer from "multer";
 
-const multerMeet = multer({ dest: "uploads/img/" });
+const s3 = new aws.S3({
+  secretAccessKey: process.env.AW_PRIVATE_KEY,
+  accessKeyId: process.env.AWS_KEY,
+});
+
+const multerMeet = multer({
+  storage: multerS3({
+    s3,
+    acl: "public-read",
+    bucket: "meetproject/meet",
+  }),
+});
 
 export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "MeetMoney";
   res.locals.routes = routes;
-  res.locals.user = req.user || null;
+  res.locals.loggedUser = req.user || null;
   next();
 };
 

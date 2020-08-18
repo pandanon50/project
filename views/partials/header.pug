@@ -5,7 +5,7 @@ header.header
             h1 가계부
     .header__column
         ul
-        if !user
+        if !loggedUser
             li
                 a(href=routes.join) Join
             li
