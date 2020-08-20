@@ -1,6 +1,3 @@
-import "@babel/polyfill";
-import "./init";
-
 import express from "express";
 import "core-js";
 import routes from "./routes.js";
