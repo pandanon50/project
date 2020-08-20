@@ -1,8 +1,11 @@
+import "@babel/polyfill";
 import "./init";
+
 import express from "express";
 import "core-js";
 import routes from "./routes.js";
 import session from "express-session";
+import path from "path";
 import MongoStore from "connect-mongo";
 import mongoose from "mongoose";
 import morgan from "morgan";
@@ -26,8 +29,8 @@ const CookieStore = MongoStore(session);
 
 app.use(helmet());
 app.set("view engine", "pug");
-app.use("/uploads", express.static("uploads"));
-app.use("/static", express.static("static"));
+app.set("views", path.join(__dirname, "views"));
+app.use("/static", express.static(path.join(__dirname, "static")));
 app.use(cookieparser());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
