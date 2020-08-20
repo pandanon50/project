@@ -11,7 +11,8 @@
     "move": "xcopy C:\\Users\\panda\\project\\src\\static C:\\Users\\panda\\project\\build\\static && xcopy C:\\Users\\panda\\project\\src\\views C:\\Users\\panda\\project\\build\\views",
     "prebuild": "rd /s \"build\"",
     "build": "npm run build:server && npm run build:assets && npm run move",
-    "start": "node build/init.js"
+    "start": "node build/init.js",
+    "prestart": "npm run build"
   },
   "repository": {
     "type": "git",
