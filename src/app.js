@@ -7,6 +7,7 @@ import MongoStore from "connect-mongo";
 import mongoose from "mongoose";
 import morgan from "morgan";
 import helmet from "helmet";
+import flash from "express-flash";
 import bodyparser from "body-parser";
 import cookieparser from "cookie-parser";
 import passport from "passport";
@@ -42,6 +43,7 @@ app.use(
     store: new CookieStore({ mongooseConnection: mongoose.connection }),
   })
 );
+app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());
