@@ -15,7 +15,9 @@ nodejs project 2020/08~
 ---
 
 -   백엔드 : nodejs
--   프론트엔드 : html/css/js
+-   서버 : Exprees.js
+-   프론트엔드 : html/scss/js
+-   
 
 ### pages
 
