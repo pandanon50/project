@@ -22,5 +22,7 @@ nodejs project 2020/08
 ### pages
 
 1. home화면
-
+![project1](https://user-images.githubusercontent.com/60589856/91267310-12906480-e7ae-11ea-9499-18db2805fa3e.PNG)
 2. 모임 main화면
+![project2](https://user-images.githubusercontent.com/60589856/91267316-14f2be80-e7ae-11ea-984b-8a578342ec26.PNG)
+
